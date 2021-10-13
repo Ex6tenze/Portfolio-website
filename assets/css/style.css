@@ -11355,6 +11355,9 @@ textarea.form-control-lg {
 .blog {
   padding-bottom: 5rem;
 }
+.blog .heading-line {
+  padding-bottom: 2rem;
+}
 .blog p.blogpost {
   font-size: 1.2rem;
   font-weight: 400;
