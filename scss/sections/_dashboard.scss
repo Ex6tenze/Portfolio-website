@@ -1,10 +1,17 @@
-@use '../custom' as*;
+@use '../custom' as *;
 @use '../components/mixins' as *;
 
 .monitor {
     @include gradient;
     width: 100%;
     height: 100%;
+
+    .tableFooter {
+        font-family: 'Poppins', sans-serif;
+        font-style: italic;
+        width: 100%;
+        font-weight: 400;
+    }
 
     h1 {
         color: $white;

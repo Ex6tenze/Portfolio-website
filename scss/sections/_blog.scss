@@ -1,0 +1,17 @@
+@use '../custom' as *;
+
+.blog {
+
+    padding-bottom: 5rem;
+
+    p.blogpost {
+
+            font-size: 1.2rem;
+            font-weight: 400;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 1.4rem;
+            }
+        
+    }
+}
