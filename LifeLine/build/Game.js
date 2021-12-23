@@ -33,9 +33,9 @@ export default class Game {
             death.volume = 0.5;
             this.ctx.beginPath();
             this.ctx.rect(0, 0, this.canvas.width, this.canvas.height);
-            this.ctx.fillStyle = 'red';
+            this.ctx.fillStyle = 'darkred';
             this.ctx.fill();
-            this.writeTextToCanvas('You died', 100, this.canvas.width / 2, this.canvas.height / 2);
+            this.writeTextToCanvas('Level Gefaald!', 100, this.canvas.width / 2, this.canvas.height / 2);
             setTimeout(() => {
                 window.location.reload();
             }, 5000);
@@ -54,7 +54,7 @@ export default class Game {
         if (this.bossfight.getCompletion() === true) {
             this.visBucks += this.bossfight.getMoney();
             this.draw();
-            const winner = new Audio('../assets/audio/sfx/gamewin.wav');
+            const winner = new Audio('./assets/audio/sfx/gamewin.wav');
             winner.load();
             winner.volume = 0.5;
             winner.play();
@@ -88,7 +88,7 @@ export default class Game {
             this.ctx.rect(0, 0, this.canvas.width, this.canvas.height);
             this.ctx.fillStyle = 'lightblue';
             this.ctx.fill();
-            this.writeTextToCanvas('Level Complete', 100, this.canvas.width / 2, this.canvas.height / 2);
+            this.writeTextToCanvas('Level Gehaald!', 100, this.canvas.width / 2, this.canvas.height / 2);
         }
     }
     writeTextToCanvas(text, fontSize = 20, xCoordinate, yCoordinate, alignment = 'center', color = 'black') {
