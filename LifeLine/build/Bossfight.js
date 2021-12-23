@@ -14,6 +14,8 @@ export default class Bossfight extends Level {
     index;
     randomIndexArray;
     indexArray;
+    bgm = new Audio('./assets/audio/music/bossfight.mp3');
+    easterEgg = new Audio('./assets/audio/music/mega.mp3');
     constructor(canvas) {
         super(100, canvas);
         this.question = ['Wie kan je niet vertrouwen?',
@@ -92,9 +94,22 @@ export default class Bossfight extends Level {
         if (this.index !== this.question.length + 1) {
             this.index += 1;
         }
-        console.log(this.currentAnswers);
-        console.log(this.correctAnswer);
         this.circleGenerator();
+    }
+    playMusic() {
+        this.bgm.load();
+        this.bgm.play();
+        this.bgm.loop = true;
+        this.bgm.volume = 0.5;
+    }
+    easterEggMusic() {
+        this.easterEgg.load();
+        this.easterEgg.play();
+        this.easterEgg.loop = true;
+        this.easterEgg.volume = 0.5;
+    }
+    stopMusic() {
+        this.bgm.pause();
     }
     answerSelect(player) {
         let currentIndex;
@@ -110,10 +125,11 @@ export default class Bossfight extends Level {
                     this.questionGenerator();
                     player.setXPos(this.canvas);
                     player.setYPos(this.canvas);
-                    this.points += 10;
+                    this.points = 10;
                     this.questionDone = true;
                     if (this.index > this.question.length) {
                         this.isCompleted = true;
+                        this.bgm.pause();
                     }
                 }
                 else {
@@ -127,17 +143,22 @@ export default class Bossfight extends Level {
     }
     circleGenerator() {
         this.currentAnswers.forEach((element, index) => {
-            this.circles.push(new Circle(index, (this.canvas.width / 4) + (index * 400), this.canvas.height / 4));
+            this.circles.push(new Circle(index, (this.canvas.width / 8) + (index * 475), this.canvas.height / 4));
         });
     }
     draw() {
         this.canvas.style.backgroundImage = "url('./assets/images/backgrounds/background1.png')";
         this.canvas.style.backgroundSize = 'cover';
-        this.writeTextToCanvas(`${this.currentQuestion}`, 40, this.canvas.width / 2, this.canvas.height / 1.25);
+        this.ctx.beginPath();
+        this.ctx.rect(0, this.canvas.height / 1.35, this.canvas.width, 350);
+        this.ctx.fillStyle = 'rgba(173, 216, 230, 0.5)';
+        this.ctx.fill();
+        this.ctx.stroke();
+        this.writeTextToCanvas(`${this.currentQuestion}`, 30, this.canvas.width / 2, this.canvas.height / 1.25);
         let spacing = 0;
         this.currentAnswers.forEach((answer, index) => {
             spacing += 40;
-            this.writeTextToCanvas(`${index + 1} ${answer}`, 40, this.canvas.width / 2, this.canvas.height / 1.20 + spacing);
+            this.writeTextToCanvas(`${index + 1} ${answer}`, 30, this.canvas.width / 2, this.canvas.height / 1.24 + spacing);
             this.circles.forEach((circle) => {
                 circle.draw(this.ctx);
             });
