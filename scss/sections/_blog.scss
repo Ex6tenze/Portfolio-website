@@ -1,21 +1,24 @@
-@use '../custom' as *;
+@use "../custom" as *;
+@use "../components/mixins" as *;
 
 .blog {
+  @include gradient;
 
-    .heading-line {
-        padding-bottom: 2rem;
+  .heading-line {
+    padding-bottom: 2rem;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  p.blogpost {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.4rem;
     }
-
-    padding-bottom: 5rem;
-
-    p.blogpost {
-
-            font-size: 1.2rem;
-            font-weight: 400;
-
-            @include media-breakpoint-up(lg) {
-                font-size: 1.4rem;
-            }
-        
-    }
+  }
 }
