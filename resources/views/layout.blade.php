@@ -162,7 +162,7 @@
                 <ul class="list-inline company-list">
                     <li><a href="https://github.com/bert0018/bert0018.github.io" target="_blank"
                            rel="noopener noreferrer">Website</a></li>
-                    <li><a href="https://bert0018.github.io/LifeLine/" target="_blank" rel="noopener noreferrer">LifeLine</a>
+                    <li><a href="https://lifelinegame.github.io/" target="_blank" rel="noopener noreferrer">LifeLine</a>
                     </li>
                 </ul>
             </div>
