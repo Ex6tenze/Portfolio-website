@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+
+    mysql:
+        container_name: Database
+        hostname: mysql
+        image: mysql:latest
+        volumes:
+            - 'apache-mysql:/var/lib/mysql'
+        ports:
+            - '${FORWARD_DB_PORT:-3306}:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_DATABASE: "${DB_DATABASE}"
+            MYSQL_USER: "${DB_USERNAME}"
+            MYSQL_PASSWORD: "${DB_PASSWORD}"
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        networks:
+            - apache
+    
+    php-apache:
+        container_name: Application
+        hostname: php-apache
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - '${APP_PORT:-80}:80'
+        volumes: 
+            - '.:/var/www/html/'
+        networks:
+            - apache
+        depends_on:
+            - mysql
+
+    composer:
+        container_name: Composer
+        hostname: composer
+        image: composer:latest
+        volumes:
+        - '.:/app'
+        command: >
+            bash -c "composer update
+            && composer install"
+
+networks:
+    apache:
+        driver: bridge
+volumes:
+    apache-mysql:
+        driver: local

@@ -1,0 +1,14 @@
+@use "../../custom" as *;
+@use "../../components/mixins" as *;
+
+.faq {
+  @include gradient;
+
+  h1 {
+    color: white;
+  }
+
+  .lead {
+    color: white;
+  }
+}
