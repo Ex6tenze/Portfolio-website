@@ -30,5 +30,3 @@ Auth::routes([
     'reset' => false, // Password Reset Routes
     'verify' => false, // Email Verification Routes
   ]);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
