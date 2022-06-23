@@ -24,3 +24,7 @@ Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/download', [DownloadController::class, 'show']);
 Route::resource('/blog', BlogController::class);
 Route::resource('/faq', FAQController::class)->except(['show']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
