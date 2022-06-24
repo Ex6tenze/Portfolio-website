@@ -10237,6 +10237,14 @@ div.postContent {
   text-transform: capitalize;
   font-weight: 600;
 }
+.menu li a img {
+  margin: -30px;
+}
+@media (max-width: 575.98px) {
+  .menu li a img {
+    display: none;
+  }
+}
 .menu li:hover {
   color: #fff;
 }

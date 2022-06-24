@@ -46,9 +46,9 @@
                     </li>
                     <!-- Right Side Of Navbar -->
                     <li class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        @if (Route::has('login'))
+                    <!-- Authentication Links -->
+                    @guest
+                    @if (Route::has('login'))
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
@@ -72,7 +72,7 @@
                         </div>
                     </li>
                     @endguest
-                    </li>
+                    <li class="nav-item" id="weather"></li>
                 </ul>
             </div>
         </div>
@@ -198,6 +198,7 @@
     </footer>
 
     <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/api.js"></script>
 
 </body>
 
