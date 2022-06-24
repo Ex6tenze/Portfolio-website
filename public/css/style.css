@@ -10236,9 +10236,7 @@ div.postContent {
   padding: 0 0.7rem;
   text-transform: capitalize;
   font-weight: 600;
-}
-.menu li a img {
-  margin: -30px;
+  justify-items: center;
 }
 @media (max-width: 575.98px) {
   .menu li a img {
