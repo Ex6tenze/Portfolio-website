@@ -1,19 +1,21 @@
 
 async function init() {
-    // Select the weather report location on navbar
-    const domElement = document.getElementById("weather");
+    // Select the navbar
+    const domElement = document.getElementById("navbarNav");
     // Call the weather API
     const data = await getWeatherData();
 
-    // Make new navbar item
-    // Create anchor
-    const a = document.createElement("a");
-    // Add classes to anchor
-    a.classList.add('nav-link');
-    a.classList.add('active');
-    // Set 
-    a.innerHTML = `<img src=${data.current.condition.icon}>`;
-    domElement.append(a);
+    // Make new weather logo
+    const weatherLogo = document.createElement("div")
+    weatherLogo.classList.add("weather")
+    // Connect API
+    weatherLogo.innerHTML = `
+            <img src=${data.current.condition.icon}>
+            <ul class=navbar-text>
+                <li><a class="nav-link active">${data.current.temp_c} °C</a></li>
+                <li><a class="nav-link active">${data.current.condition.text}</a></li>
+            </ul>`;
+    domElement.append(weatherLogo);
 }
 
 async function getWeatherData() {

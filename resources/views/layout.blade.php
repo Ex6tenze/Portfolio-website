@@ -72,7 +72,6 @@
                         </div>
                     </li>
                     @endguest
-                    <li class="nav-item" id="weather"></li>
                 </ul>
             </div>
         </div>
