@@ -30,19 +30,19 @@
                         <a class="nav-link {{Request::path() === '/' ? 'disabled': 'active'}}" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{Request::path() === 'about' ? 'disabled': 'active'}}" href="about">About</a>
+                        <a class="nav-link {{Request::path() === 'about' ? 'disabled': 'active'}}" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{Request::path() === 'dashboard' ? 'disabled': 'active'}}" href="dashboard">Dashboard</a>
+                        <a class="nav-link {{Request::path() === 'dashboard' ? 'disabled': 'active'}}" href="/dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{Request::path() === 'faq' ? 'disabled': 'active'}}" href="faq">FAQ</a>
+                        <a class="nav-link {{Request::path() === 'faq' ? 'disabled': 'active'}}" href="/faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{Request::path() === 'blog' ? 'disabled': 'active'}}" href="blog">Blog</a>
+                        <a class="nav-link {{Request::is('blog*') ? 'disabled': 'active'}}" href="/blog">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{Request::path() === 'download' ? 'disabled': 'active'}}" href="download">Downloads</a>
+                        <a class="nav-link {{Request::path() === 'download' ? 'disabled': 'active'}}" href="/download">Downloads</a>
                     </li>
                     <!-- Right Side Of Navbar -->
                     <li class="navbar-nav ms-auto">

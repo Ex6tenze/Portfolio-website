@@ -7,6 +7,10 @@ use App\Models\Faq;
 
 class FAQController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
+
     /*
      * Function to show the faq view.
      */

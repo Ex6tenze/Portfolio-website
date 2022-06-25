@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     public function index()
     {
         return view('blog.index', ['posts' => Blogpost::latest()->get()]);
