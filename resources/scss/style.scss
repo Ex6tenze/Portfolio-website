@@ -24,3 +24,6 @@
 @use "sections/faq/indexFaq";
 @use "sections/faq/createFaq";
 @use "sections/faq/editFaq";
+
+// Error sections
+@use "errors/notfound";
