@@ -6,18 +6,18 @@ async function init() {
     const data = await getWeatherData();
 
     // Make weather section
-    const weatherLogo = document.createElement("div")
+    const weather = document.createElement("div")
     // Add div class for styling
-    weatherLogo.classList.add("weather")
+    weather.classList.add("weather")
     // Define weather elements
-    weatherLogo.innerHTML = `
+    weather.innerHTML = `
             <img src=${data.current.condition.icon}>
             <ul class=navbar-text>
                 <li><a class="nav-link active">${data.current.temp_c} °C</a></li>
                 <li><a class="nav-link active">${data.current.condition.text}</a></li>
             </ul>`;
     // Add elements to HTML
-    domElement.append(weatherLogo);
+    domElement.append(weather);
 }
 
 async function getWeatherData() {
