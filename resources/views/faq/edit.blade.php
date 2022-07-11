@@ -24,7 +24,7 @@
                         <label class="label display-6 fw-bold text-uppercase" for="question">Question</label>
 
                         <div class="control">
-                            <input class="input" type="text" name="question" id="question" placeholder="A question..." value="{{$faqs->question}}">
+                            <input class="input" type="text" name="question" id="question" placeholder="A question..." value="{{$faqs->question}}" required>
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
                         <label class="label display-6 fw-bold text-uppercase" for="answer">Answer</label>
 
                         <div class="control">
-                            <textarea class="input" name="answer" id="answer" placeholder="The answer...">{{$faqs->answer}}</textarea>
+                            <textarea class="input" name="answer" id="answer" placeholder="The answer..." required>{{$faqs->answer}}</textarea>
                         </div>
                     </div>
 

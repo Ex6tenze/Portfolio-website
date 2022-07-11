@@ -31,7 +31,7 @@
                         <label class="label display-6 fw-bold text-uppercase" for="excerpt">Excerpt</label>
 
                         <div class="control">
-                            <textarea class="input" name="excerpt" id="excerpt" placeholder="A small excerpt..." required></textarea>
+                            <input class="input" name="excerpt" id="excerpt" placeholder="A small excerpt..." required>
                         </div>
                     </div>
 
