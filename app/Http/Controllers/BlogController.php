@@ -26,17 +26,17 @@ class BlogController extends Controller
         return view('blog.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $blogpost = new Blogpost();
+       $validatedAttributes = $request->validate([
+        'title' => 'required',
+        'excerpt' => 'required',
+        'body' => 'required'
+       ]);
 
-        $blogpost->title = request('title');
-        $blogpost->excerpt = request('excerpt');
-        $blogpost->body = request('body');
+       Blogpost::create($validatedAttributes);
 
-        $blogpost->save();
-
-        return redirect('/blog');
+       return redirect('/blog');
     }
 
     public function edit($id)
@@ -44,15 +44,17 @@ class BlogController extends Controller
         return view('blog.edit', ['posts' => Blogpost::find($id)]);
     }
 
-    public function update($id)
+    public function update(id $id, Request $request)
     {
         $blogpost = Blogpost::find($id);
 
-        $blogpost->title = request('title');
-        $blogpost->excerpt = request('excerpt');
-        $blogpost->body = request('body');
+        $validatedAttributes = $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+           ]);
 
-        $blogpost->save();
+        $blogpost->update($validatedAttributes)
 
         return redirect('/blog/' . $blogpost->id);
     }
