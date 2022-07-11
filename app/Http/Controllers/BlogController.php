@@ -54,7 +54,7 @@ class BlogController extends Controller
             'body' => 'required'
            ]);
 
-        $blogpost->update($validatedAttributes)
+        $blogpost->update($validatedAttributes);
 
         return redirect('/blog/' . $blogpost->id);
     }
