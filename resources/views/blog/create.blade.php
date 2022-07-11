@@ -22,7 +22,7 @@
                         <label class="label display-6 fw-bold text-uppercase" for="title">Title</label>
 
                         <div class="control">
-                            <input class="input" type="text" name="title" id="title" placeholder="A title...">
+                            <input class="input" type="text" name="title" id="title" placeholder="A title..." required>
                         </div>
                     </div>
 
@@ -31,7 +31,7 @@
                         <label class="label display-6 fw-bold text-uppercase" for="excerpt">Excerpt</label>
 
                         <div class="control">
-                            <textarea class="input" name="excerpt" id="excerpt" placeholder="A small excerpt..."></textarea>
+                            <textarea class="input" name="excerpt" id="excerpt" placeholder="A small excerpt..." required></textarea>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@
                         <label class="label display-6 fw-bold text-uppercase" for="body">Body</label>
 
                         <div class="control">
-                            <textarea class="input" name="body" id="body" placeholder="The full message of the post..."></textarea>
+                            <textarea class="input" name="body" id="body" placeholder="The full message of the post..." required></textarea>
                         </div>
                     </div>
 
