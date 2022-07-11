@@ -24,14 +24,14 @@ class FAQController extends Controller
         return view('faq.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $faq = new Faq();
+        $validatedAttributes = $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
 
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-
-        $faq->save();
+        Faq::create($validatedAttributes);
 
         return redirect('/faq');
     }
@@ -41,14 +41,16 @@ class FAQController extends Controller
         return view('faq.edit', ['faqs' => Faq::find($id)]);
     }
 
-    public function update($id)
+    public function update(id $id, Request $request)
     {
         $faq = Faq::find($id);
 
-        $faq->question = request('question');
-        $faq->answer = request('answer');
+        $validatedAttributes = $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
 
-        $faq->save();
+        $faq->update($validatedAttributes);
 
         return redirect('/faq');
     }
