@@ -10737,11 +10737,5 @@ div.notFoundText a.notFound:hover {
     text-decoration: underline;
   }
 }
-a.errorButton {
-  background-color: aqua;
-  margin: 5px;
-  text-align: center;
-  justify-content: center;
-}
 
 /*# sourceMappingURL=style.css.map */
