@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "compile:sass": "sass --watch --poll resources/scss:public/css",
+        "compile:sass": "sass --watch resources/scss:public/css",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",

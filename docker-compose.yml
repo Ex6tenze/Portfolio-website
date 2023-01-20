@@ -49,7 +49,7 @@ services:
         volumes:
             - '.:/app/'
         command: >
-            bash -c "composer install && composer update"
+            bash -c "composer install && composer update && tail -f /dev/null"
 
     node:
         container_name: Node-Portfolio
