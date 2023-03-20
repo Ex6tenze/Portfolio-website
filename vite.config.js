@@ -7,7 +7,7 @@ export default {
     ],
     root: 'src/',
     publicDir: "../public/",
-    base: 'https://bert0018.github.io/dist',
+    base: 'https://ex6tenze.github.io/Portfolio-website/',
     server:
     {
         host: true
